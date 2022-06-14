@@ -1,0 +1,65 @@
+<?php
+
+/** @var \Duy\BannerSlider\Block\Widget\BannerSlider $block */
+$sliders = $block->getSliders();
+$banner = $block->getBanner();
+?>
+<?php if (count($sliders)): ?>
+    <div class="custom-banner" id="custom-banner"
+         style="max-width: 100%; height: 550px; display: flex; justify-content: center; margin-bottom: 50px">
+        <div class="owl-carousel home-slider" style="max-width: 1240px">
+            <?php foreach ($sliders as $slider): ?>
+                <div class="item" style="" )>
+                    <a href="<?= $slider['url'] ? $slider['url'] :'#' ?>" title="<?= $slider['img_title'] ?>">
+                        <img src="<?= $slider['image'] ?>" alt="<?= $slider['name'] ?>"
+                             style="width: 1240px; max-height: 550px"/>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require(['jquery', 'owlcarousel'], function($) {
+            let position = "<?php echo $banner['position']?>";
+            if (position == 1
+            ) {
+                $("#custom-banner").appendTo((".page-header"));
+
+            }
+            if (position == 3
+            ) {
+                $("#custom-banner").appendTo(("#maincontent"));
+            }
+
+            if (position == 4
+            ) {
+                $("#custom-banner").appendTo((".page-footer"));
+            }
+            $('.home-slider').owlCarousel({
+                center: false,
+                startPosition: 0,
+                margin: 0,
+                responsive: {
+                    0: {
+                        items:1
+                    },
+                    768: {
+                        items:1
+                    }
+                },
+                nav: true,
+                loop: true,
+                dots: true,
+                dotsSpeed: 1000,
+                slideBy: 1,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                autoplaySpeed: 800,
+                navSpeed: 1000,
+                mouseDrag: true,
+                responsiveRefreshRate: 100
+            });
+        });
+    </script>
+<?php endif; ?>

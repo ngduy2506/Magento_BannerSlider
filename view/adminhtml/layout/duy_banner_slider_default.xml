@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Duy_BannerSlider::css/duybannerslider.css"/>
+    </head>
+    <body>
+        <referenceContainer name="page.main.actions">
+            <block class="Duy\BannerSlider\Block\Adminhtml\Page\Menu" name="duy_banner_slider_menu">
+                <block class="Duy\BannerSlider\Block\Adminhtml\Page\Menu\Item" name="duy_banner_slider_menu_item.slider">
+                    <arguments>
+                        <argument name="path" xsi:type="string">*/slider/index</argument>
+                        <argument name="label" xsi:type="string">Slider</argument>
+                        <argument name="resource" xsi:type="string">Duy_BannerSlider::slider</argument>
+                        <argument name="controller" xsi:type="string">slider</argument>
+                    </arguments>
+                </block>
+                <block class="Duy\BannerSlider\Block\Adminhtml\Page\Menu\Item" name="duy_banner_slider_menu_item.banner">
+                    <arguments>
+                        <argument name="path" xsi:type="string">*/banner/index</argument>
+                        <argument name="label" xsi:type="string">Banner</argument>
+                        <argument name="resource" xsi:type="string">Duy_BannerSlider::banner</argument>
+                        <argument name="controller" xsi:type="string">banner</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

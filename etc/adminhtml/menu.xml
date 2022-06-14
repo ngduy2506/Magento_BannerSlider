@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Duy_BannerSlider::banner_slider" title="Banner Slider" translate="title" module="Duy_BannerSlider" sortOrder="200" resource="Duy_BannerSlider::banner_slider" parent="Magento_Backend::content"/>
+        <add id="Duy_BannerSlider::slider" title="Sliders" translate="title" module="Duy_BannerSlider" sortOrder="10" resource="Duy_BannerSlider::slider" parent="Duy_BannerSlider::banner_slider" action="duy_banner_slider/slider/index"/>
+        <add id="Duy_BannerSlider::banner" title="Banners" translate="title" module="Duy_BannerSlider" sortOrder="10" resource="Duy_BannerSlider::banner" parent="Duy_BannerSlider::banner_slider" action="duy_banner_slider/banner/index"/>
+    </menu>
+</config>

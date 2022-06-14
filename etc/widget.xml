@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="duy_banners_slider"
+            class="Duy\BannerSlider\Block\Widget\BannerSlider"
+            placeholder_image="Duy_BannerSlider::images/banner-slider-widget.png" ttl="86400">
+        <label translate="true">Banner Slider</label>
+        <description translate="true">Show the banner slider via Group Name</description>
+        <parameters>
+            <parameter name="group_id" xsi:type="select" visible="true" required="true"
+                       source_model="Duy\BannerSlider\Model\Banner\Config\Source\Options">
+                <label translate="true">Banner Name</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default"
+                            value=""
+                            selected="true">
+                        <label translate="true">Select ...</label>
+                    </option>
+                    <option name="homepage"
+                            value="Duy_BannerSlider::slider/list.phtml"
+                            selected="true">
+                        <label translate="true">BannerSlider Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
