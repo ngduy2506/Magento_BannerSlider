@@ -181,7 +181,7 @@
                 </item>
             </argument>
         </column>
-        <column name="position" class="Duy\BannerSlider\Ui\Component\Listing\Column\Position">
+        <column name="position">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Duy\BannerSlider\Model\Config\Source\Position</item>
                 <item name="config" xsi:type="array">
