@@ -47,7 +47,6 @@ class PageType implements OptionSourceInterface
             self::HOME_PAGE => [],
             self::PRODUCT_PAGE => [CatalogProduct::CACHE_TAG],
             self::CATEGORY_PAGE => [CatalogCategory::CACHE_TAG],
-            self::CUSTOM_WIDGET => [CatalogProduct::CACHE_TAG, CatalogCategory::CACHE_TAG],
         ];
     }
 }
