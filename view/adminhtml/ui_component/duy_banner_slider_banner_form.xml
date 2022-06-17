@@ -17,7 +17,7 @@
             <item name="delete" xsi:type="string">Duy\BannerSlider\Block\Adminhtml\Banner\Edit\DeleteButton</item>
             <item name="reset" xsi:type="string">Duy\BannerSlider\Block\Adminhtml\Slider\Edit\ResetButton</item>
             <item name="save" xsi:type="string">Duy\BannerSlider\Block\Adminhtml\Banner\Edit\SaveButton</item>
-            <item name="save_and_continue" xsi:type="string">Duy\BannerSlider\Block\Adminhtml\Slider\Edit\SaveAndContinueButton</item>
+            <item name="save_and_continue" xsi:type="string">Duy\BannerSlider\Block\Adminhtml\Banner\Edit\SaveAndContinueButton</item>
         </item>
     </argument>
     <dataSource name="banner_form_data_source">
