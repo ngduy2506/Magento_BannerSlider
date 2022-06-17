@@ -12,20 +12,20 @@ class Delete extends \Magento\Backend\App\Action
     const ADMIN_RESOURCE = 'Duy_BannerSlider::slider_delete';
 
     /**
-     * Delete Banner
+     * Delete Slider
      *
      * @return \Magento\Framework\View\Result\PageFactory
      */
     public function execute()
     {
         // check if we know what should be deleted
-        $bannerId = (int)$this->getRequest()->getParam('id');
+        $sliderrId = (int)$this->getRequest()->getParam('id');
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
-        if ($bannerId && (int) $bannerId > 0) {
+        if ($sliderId && (int) $sliderId > 0) {
             try {
                 $model = $this->_objectManager->create('Duy\BannerSlider\Model\Slider');
-                $model->load($bannerId);
+                $model->load($sliderId);
                 $model->delete();
                 $this->messageManager->addSuccess(__('The Slider has been deleted successfully.'));
                 return $resultRedirect->setPath('*/*/');
