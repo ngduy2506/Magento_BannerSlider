@@ -92,7 +92,7 @@
                 <item name="editorConfig" xsi:type="array">
                     <item name="selectProvider" xsi:type="string">duy_banner_slider_banner_listing.duy_banner_slider_banner_listing.duy_banner_slider_columns.ids</item>
                     <item name="enabled" xsi:type="boolean">true</item>
-                    <item name="indexField" xsi:type="string">banner_id</item>
+                    <item name="indexField" xsi:type="string">id</item>
                     <item name="clientConfig" xsi:type="array">
                         <item name="saveUrl" xsi:type="url" path="duy_banner_slider/banner/inlineEdit"/>
                         <item name="validateBeforeSave" xsi:type="boolean">false</item>
