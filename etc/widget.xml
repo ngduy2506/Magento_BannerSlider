@@ -2,7 +2,7 @@
 
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget id="duy_banners_slider"
+    <widget id="duy_banner_slider"
             class="Duy\BannerSlider\Block\Widget\BannerSlider"
             placeholder_image="Duy_BannerSlider::images/banner-slider-widget.png" ttl="86400">
         <label translate="true">Banner Slider</label>
