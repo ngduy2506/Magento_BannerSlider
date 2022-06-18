@@ -18,7 +18,7 @@
                     <option name="default"
                             value=""
                             selected="true">
-                        <label translate="true">Select ...</label>
+                        <label translate="true"></label>
                     </option>
                     <option name="homepage"
                             value="Duy_BannerSlider::slider/list.phtml"
