@@ -4,6 +4,8 @@
 namespace Duy\BannerSlider\Model;
 
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\App\ObjectManager;
+use Magento\Store\Model\StoreManagerInterface;
 
 class Banner extends \Magento\Framework\Model\AbstractModel
 {
@@ -38,5 +40,17 @@ class Banner extends \Magento\Framework\Model\AbstractModel
         }
         parent::beforeSave();
         return $this;
+    }
+     /**
+     * Get StoreManagerInterface instance
+     *
+     * @return StoreManagerInterface
+     */
+    private function _getStoreManager()
+    {
+        if ($this->_storeManager === null) {
+            $this->_storeManager = ObjectManager::getInstance()->get(StoreManagerInterface::class);
+        }
+        return $this->_storeManager;
     }
 }
