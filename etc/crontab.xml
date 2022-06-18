@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="duy_jobs">
+        <job name="duy_cron_disable_slider"
+             instance="Duy\BannerSlider\Cron\ConfigStatus"
+             method="disableSlider">
+            <schedule>* * * * *</schedule>
+        </job>
+        <job name="duy_cron_enable_slider"
+             instance="Duy\BannerSlider\Cron\ConfigStatus"
+             method="enableSlider">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+</config>
