@@ -20,9 +20,9 @@ class Position implements \Magento\Framework\Data\OptionSourceInterface
     {
         return [
             ['value' => self::MENU_TOP,  'label' => __('Menu Top')],
-            ['value' => self::MENU_BOTTOM,  'label' => __('Menu Bottom')],
             ['value' => self::CONTENT_TOP,  'label' => __('Content top')],
-            ['value' => self::PAGE_BOTTOM,  'label' => __('Page bottom')]
+            ['value' => self::PAGE_BOTTOM,  'label' => __('Page Bottom')],
+            ['value' => self::MENU_BOTTOM,  'label' => __('Menu Bottom')]
         ];
     }
 }
