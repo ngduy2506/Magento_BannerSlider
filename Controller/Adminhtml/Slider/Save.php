@@ -92,6 +92,10 @@ class Save extends \Magento\Backend\App\Action
             $model->setData($data);
 
             try {
+                if(!$this->validate($data)) {
+                    $this->messageManager->addError('Display To cannot be equal or earlier than Display From.');
+                    return $resultRedirect->setPath($this->_redirect->getRefererUrl());
+                }
                 $model->save();
                 if ($imageName) {
                     $this->imageUploader->moveFileFromTmp($imageName);
@@ -122,14 +126,14 @@ class Save extends \Magento\Backend\App\Action
      * @return $this
      * @throws LocalizedException
      */
-    private function validate(array $data)
+     private function validate(array $data)
     {
         if (null != $data['display_from'] && null != $data['display_to']
-            && strtotime($data['display_from']) >= strtotime($data['display_to'])
-        ) {
-            throw new LocalizedException(__('Display To cannot be equal or earlier than Display From.'));
-        }
-        return $this;
+        && strtotime($data['display_from']) >= strtotime($data['display_to'])
+    ) {
+        return false;
+    }
+    return true;
     }
 
     /**
