@@ -17,15 +17,15 @@ class ConfigSlideStatus
     protected $date;
 
     public function __construct(
-        SlideFactory $slideFactory,
+        SliderFactory $sliderFactory,
         DateTime     $date
     )
     {
-        $this->slideFactory = $slideFactory;
+        $this->sliderFactory = $sliderFactory;
         $this->date = $date;
     }
 
-    public function disableSlides()
+    public function disableSlider()
     {
         // get current date
         $currentDate = $this->date->gmtDate();
@@ -36,7 +36,7 @@ class ConfigSlideStatus
             if (strtotime($slide['display_from']) > strtotime($currentDate) || strtotime($slide['display_to']) < strtotime($currentDate)) {
                 if ($slide['status'] == 1) {
                     $slide['status'] = 0;
-                    $model = $this->slideFactory->create();
+                    $model = $this->sliderFactory->create();
                     $model->setData($slide);
                     $model->save();
                 }
@@ -44,17 +44,17 @@ class ConfigSlideStatus
         }
     }
 
-    public function enableSlides()
+    public function enableSlider()
     {
         // get current date
         $currentDate = $this->date->gmtDate();
         // get all slides if status = 0
-        $slides = $this->slideFactory->create()->getCollection()->addFieldToFilter('status', 0)->getData();
+        $slides = $this->sliderFactory->create()->getCollection()->addFieldToFilter('status', 0)->getData();
         foreach ($slides as $slide) {
             // compare and set enable if dis_from <= current date or dis_to >= current date
             if (strtotime($slide['display_from']) <= strtotime($currentDate) && strtotime($slide['display_to']) >= strtotime($currentDate)) {
                 $slide['status'] = 1;
-                $model = $this->slideFactory->create();
+                $model = $this->sliderFactory->create();
                 $model->setData($slide);
                 $model->save();
             }
