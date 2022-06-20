@@ -23,7 +23,6 @@ class Slider extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         $name = $object->getName();
         $url = $object->getUrl();
         $image = $object->getImage();
-        $groupId = $object->getGroupId();
 
         if (empty($name)) {
             throw new LocalizedException(__('The Slider name is required.'));
