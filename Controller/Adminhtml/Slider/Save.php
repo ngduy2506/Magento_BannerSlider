@@ -100,7 +100,7 @@ class Save extends \Magento\Backend\App\Action
                 if ($imageName) {
                     $this->imageUploader->moveFileFromTmp($imageName);
                 }
-                $this->messageManager->addSuccess(__('You saved the slier.'));
+                $this->messageManager->addSuccess(__('You saved the slider.'));
                 $this->dataPersistor->clear('banner_slider');
 
                 if ($this->getRequest()->getParam('back')) {
